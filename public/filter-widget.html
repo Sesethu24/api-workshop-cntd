@@ -6,11 +6,42 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Filter widget</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="filter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"
+		integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
+		integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+
+		<script class="carFilterTemplate" type="text/template">
+			<table>
+				
+			</table>
+				{{#each filteredCars}}
+				<li>{{this.model}}</li>
+				{{/each}}
+			</ul>
+		</script>
+	
 
 </head>
 <body>
 	<div class="container">
 		<h1>Filter widget</h1>
+		<select class="selectBrand">
+			<option value="">Select a Brand</option>
+			<option value="nissan">Nissan</option>
+			<option value="toyota">Toyota</option>
+		</select>
+		<select class="selectColor">
+			<option value="">Select a Color</option>
+			<option value="blue">Blue</option>
+			<option value="red">Red</option>
+		</select>
+		<input type="button" value="filter" class="filterBtn">
+	</div>
+
+<br>	<div class="display">
+
 	</div>
 </body>
 </html>
